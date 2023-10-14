@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edugate</title>
+  </head>
+  <body>
+    <h1>EduGate</h1>
+    <p>See console...</p>
+
+    <script>
+      class Student {
+        // default value set
+        name = "unknown";
+        age = 16;
+        present = false;
+        changeAttendance() {
+          this.present = !this.present;
+        }
+      }
+
+      const damian = new Student(); // create new student to inherit class
+      console.log(damian.name); // prints 'unknown'
+      console.log(damian.age); // prints 16
+      console.log(damian.present); // prints false
+      damian.changeAttendance(); // method to change today's attendance
+      console.log(damian.present); // prints true
+    </script>
+  </body>
+</html>
