@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edugate</title>
+    <title>EduGate</title>
   </head>
   <body>
     <h1>EduGate</h1>
@@ -12,20 +12,32 @@
     <script>
       class Student {
         // default value set
-        name = "unknown";
-        age = 16;
+        constructor(name, age, address) {
+          this.name = name; // accepts name parameter as initial value for name
+          this.age = age; // accepts age parameter as initial value for age
+          this.address = address; // accepts address parameter as initial value for address
+          this.present = false;
+        }
         present = false;
         changeAttendance() {
           this.present = !this.present;
         }
+        changeAddress(newAddress) {
+          this.address = newAddress;
+        }
       }
 
-      const damian = new Student(); // create new student to inherit class
-      console.log(damian.name); // prints 'unknown'
-      console.log(damian.age); // prints 16
-      console.log(damian.present); // prints false
-      damian.changeAttendance(); // method to change today's attendance
-      console.log(damian.present); // prints true
+      const Damian = new Student("Damian", 14, "1458 Tulsa St"); // create new object named 'Damian' to inherit class
+
+      console.log(Damian.address); // prints '1458 Tulsa St'
+      Damian.changeAddress("5678 Mercury Dr");
+      console.log(Damian.address); // prints '5678 Mercury Dr'
+
+      console.log(Damian.name); // prints 'Damian'
+      console.log(Damian.age); // prints 16
+      console.log(Damian.present); // prints false
+      Damian.changeAttendance(); // method to change today's attendance
+      console.log(Damian.present); // prints true
     </script>
   </body>
 </html>
